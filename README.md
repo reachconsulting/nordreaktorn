@@ -1,2 +1,2 @@
-# NordReaktorn
+# NördReaktorn
 Hemsida för NördReaktorn
