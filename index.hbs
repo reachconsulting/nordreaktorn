@@ -1,0 +1,15 @@
+{{!< default}}
+<nav class="navbar navbar-expand">
+    {{#if @site.logo}}
+        <a href="#" class="navbar-brand logo"><img src="{{img_url @site.logo}}" alt="{{@site.title}}"/></a>
+    {{else}}
+        {{{@site.title}}}
+    {{/if}}   
+</nav>
+{{> "maininfo"}}
+<div class="spacer"></div>
+{{> "speakers"}}
+<div class="spacer"></div>
+{{> "tickets"}}
+ <div class="spacer"></div>
+{{> "partners"}}

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row mt-4">
+        <h2>Talare</h2>
+        <div class="card-deck">
+            {{#get "posts" filter="tag:speaker" as |speakers|}}
+            {{#foreach speakers}}
+            <div class="card shadow">
+                <img src="{{feature_image}}" class="card-img-top"/>
+                <div class="card-body">
+                    <h5 class="card-title">{{{title}}}</h5>
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#desc{{@index}}" aria-expanded="false" aria-controls="collapseExample">
+                        {{{excerpt}}}
+                    </button>
+                    <p class="card-text" id="desc{{@index}}">{{content}}</p>
+                </div>
+            </div>
+            {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+</div>

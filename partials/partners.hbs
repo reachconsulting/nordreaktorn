@@ -1,0 +1,12 @@
+{{#get "posts" filter="tag:partner" as |partners|}}
+<div class="container">
+            <div class="row mt-4">
+        <h2>Partners</h2>
+        {{#foreach partners}}
+        <img src="{{img_url feature_image}}" alt="{{title}}"/>
+        {{/foreach}}
+    </div>
+</div>
+{{else}}
+{{/get}}
+

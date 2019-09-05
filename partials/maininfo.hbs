@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row mt-4">
+        {{#get "posts" filter="tag:main"}}
+            {{#foreach posts}}
+        <div class="col s6 flow-text">
+                {{content}}
+        </div>
+        {{/foreach}}
+        {{/get}}
+    </div>
+</div>
