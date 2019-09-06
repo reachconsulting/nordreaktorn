@@ -1,4 +1,6 @@
 const {series, watch, src, dest, parallel} = require('gulp');
+
+var gulp = require('gulp');
 const pump = require('pump');
 
 // gulp plugins and utils
@@ -96,6 +98,6 @@ const watcher = parallel(cssWatcher, hbsWatcher);
 const build = series(css, js);
 const dev = series(build, serve, watcher);
 
-exports.build = build;
-exports.zip = series(build, zipper);
-exports.default = dev;
+gulp.task('build', series(build));
+gulp.task('default', gulp.series(dev));
+gulp.task('zip', series(build, zipper));
