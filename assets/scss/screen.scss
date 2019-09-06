@@ -1,0 +1,67 @@
+/*
+
+This is a development CSS file which is built to a minified
+production stylesheet in assets/built/screen.css using gulp dev
+
+*/
+
+
+/* Lib - Local component imports
+/* ---------------------------------------------------------- */
+@import "modules/vars";
+
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+//@import "components/global";
+// @import "components/ghost.css";
+// @import "components/lists.css";
+// @import "components/grid.css";
+// @import "components/tables.css";
+// @import "components/forms.css";
+// @import "components/buttons.css";
+
+
+/* Main - Theme styles
+/* ---------------------------------------------------------- */
+
+/* Your styles here */
+
+.navbar {
+    &-brand {
+        img {
+            height: 50px;
+        }
+    }
+}
+
+.card-link,
+.card-link:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+// number of cards per line for each breakpoint
+$cards-per-line: (
+    xs: 1,
+    sm: 2,
+    md: 2,
+    lg: 3,
+    xl: 3
+);
+
+@each $name, $breakpoint in $grid-breakpoints {
+    @media (min-width: $breakpoint) {
+        .card-deck .card {
+            flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
+        }
+    }
+}
+
+.large-underline {
+    transition: background-size .6s ease-out;
+    background: linear-gradient($gray-500,$gray-500) no-repeat left 87%/0 30%;
+    text-decoration: none!important;
+    &:hover {
+        background-size: 97% 30%;
+    }
+}

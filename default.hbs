@@ -1,31 +1,89 @@
 <!DOCTYPE html>
 <html lang="{{@site.lang}}">
-    <head>
-        <meta charset="utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<head>
 
-        <title>{{meta_title}}</title>
-        <meta name="HandheldFriendly" content="True"/>
-        <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="stylesheet" type="text/css" href="{{asset "css/nreakt.css"}}" />
+    {{!-- Base Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        {{ghost_head}}
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
 
-    </head>
-    <body>
+    {{!-- This tag outputs SEO meta+structured data and other important settings --}}
+    {{ghost_head}}
 
-    {{{body}}}
+</head>
+<body class="{{body_class}}">
 
-       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-        {{ghost_foot}}
-    </body>
-    </html>
+<div class="site-wrapper">
+
+    <header class="site-head">
+      <div class="site-head-container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          {{#if @site.logo}}
+          <a class="navbar-brand" href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{@site.title}}" /></a>
+          {{else}}
+          <a class="navbar-brand" href="{{@site.url}}">{{@site.title}}</a>
+          {{/if}}
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            {{navigation}}
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="site-main" class="site-main">
+
+        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+        {{{body}}}
+
+    </main>
+
+    {{!-- The footer at the very bottom of the screen --}}
+    <footer class="site-foot">
+        <div class="social-links">
+          {{#if @site.facebook}}
+          <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">Facebook</a>
+          {{/if}}
+          {{#if @site.twitter}}
+          <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">Twitter</a>
+          {{/if}}
+          <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">RSS</a>
+        </div>
+        &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a> &mdash; Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+    </footer>
+
+</div>
+
+<script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+</script>
+
+{{#if pagination.pages}}
+<script>
+    // maxPages is a global variable that is needed to determine
+    // if we need to load more pages for the infinitescroll, or if
+    // we reached the last page already.
+    var maxPages = parseInt('{{pagination.pages}}');
+</script>
+<script src="{{asset "built/infinitescroll.js"}}"></script>
+{{/if}}
+
+{{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+{{{block "scripts"}}}
+
+{{!-- Ghost outputs important scripts and data with this tag - it should always be the very last thing before the closing body tag --}}
+{{ghost_foot}}
+
+</body>
+</html>

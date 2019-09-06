@@ -1,0 +1,15 @@
+{{!--
+Re-usable card for linking to posts
+--}}
+
+<article class="card {{post_class}} mb-4">
+  <img src="{{img_url feature_image size="l"}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <p class="card-text">{{excerpt characters="140"}}</p>
+    <a href="{{url}}" class="btn btn-primary stretched-link">Go somewhere</a>
+  </div>
+	<div class="card-footer">
+		<small class="text-muted">Last updated <time datetime="{{date published_at timeago="true"}}">{{date published_at timeago="true"}}</time></small>
+	</div>
+</article>
