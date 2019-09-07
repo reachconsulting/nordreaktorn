@@ -1,9 +1,11 @@
 {{#get "posts" filter="tag:partner" as |partners|}}
-<div class="container">
-            <div class="row mt-4">
-        <h2>Partners</h2>
+<div class="container py-5">
+        <h1 class="text-center">Amazing Partners & Sponsorer</h1>
+            <div class="row">
         {{#foreach partners}}
-        <img src="{{img_url feature_image}}" alt="{{title}}"/>
+        <div class="col-2">
+            <img src="{{img_url feature_image}}" alt="{{title}}" class="img-fluid" />
+        </div>
         {{/foreach}}
     </div>
 </div>

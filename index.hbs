@@ -1,12 +1,21 @@
 {{!< default}}
-<nav class="navbar navbar-expand">
-    {{#if @site.logo}}
-        <a href="#" class="navbar-brand logo"><img src="{{img_url @site.logo}}" alt="{{@site.title}}"/></a>
-    {{else}}
-        {{{@site.title}}}
-    {{/if}}   
-</nav>
+<section>
+<a class="anchor" id="maininfo"></a>
 {{> "maininfo"}}
+</section>
+<section class="">
+<a class="anchor" id="intro"></a>
+{{> "intro"}}
+</section>
+<section class="my-5" data-aos="fade-up" data-aos-anchor-placement="top-center">
+<a class="anchor" id="speakers" ></a>
 {{> "speakers"}}
+</section>
+<section class="min-h-m">
+<a class="anchor" id="tickets"></a>
 {{> "tickets"}}
+</section>
+<section class="min-h-m" data-aos="fade-up" data-aos-anchor-placement="top-center">
+<a class="anchor" id="partners"></a>
 {{> "partners"}}
+</section>

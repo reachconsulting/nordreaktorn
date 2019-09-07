@@ -1,60 +1,23 @@
-/*
-
-This is a development CSS file which is built to a minified
-production stylesheet in assets/built/screen.css using gulp dev
-
-*/
-
-
-/* Lib - Local component imports
-/* ---------------------------------------------------------- */
 @import "modules/vars";
 
-
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "node_modules/aos/src/sass/aos";
 
-//@import "components/global";
-// @import "components/ghost.css";
-// @import "components/lists.css";
-// @import "components/grid.css";
-// @import "components/tables.css";
-// @import "components/forms.css";
-// @import "components/buttons.css";
+@import "modules/typography";
+@import "components/custom";
+@import "components/navbar";
+@import "layouts/default";
+@import "components/cards";
 
 
 /* Main - Theme styles
 /* ---------------------------------------------------------- */
 
+
 /* Your styles here */
 
-.navbar {
-    &-brand {
-        img {
-            height: 50px;
-        }
-    }
-}
-
-.card-link,
-.card-link:hover {
-  color: inherit;
-  text-decoration: inherit;
-}
-// number of cards per line for each breakpoint
-$cards-per-line: (
-    xs: 1,
-    sm: 2,
-    md: 2,
-    lg: 3,
-    xl: 3
-);
-
-@each $name, $breakpoint in $grid-breakpoints {
-    @media (min-width: $breakpoint) {
-        .card-deck .card {
-            flex: 0 0 calc(#{100/map-get($cards-per-line, $name)}% - #{$grid-gutter-width});
-        }
-    }
+.btn {
+    text-decoration: none;
 }
 
 .large-underline {
@@ -64,4 +27,18 @@ $cards-per-line: (
     &:hover {
         background-size: 97% 30%;
     }
+}
+
+.min-h-m {
+    min-height: 520px;
+}
+.min-h-l {
+    min-height: 720px;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -$navbar-height;
+    visibility: hidden;
 }

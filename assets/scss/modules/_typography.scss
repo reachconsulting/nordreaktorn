@@ -1,0 +1,6 @@
+@for $i from 1 through 4 {
+    .display-#{$i} { font-weight: bold; font-style: italic; }
+}
+@for $i from 1 through 6 {
+    .h#{$i}, h#{$i} { font-style: italic; }
+}

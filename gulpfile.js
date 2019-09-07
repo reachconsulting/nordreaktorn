@@ -67,7 +67,7 @@ function css(done) {
 function js(done) {
     pump([
         src('assets/js/*.js', {sourcemaps: true}),
-        uglify(),
+        // uglify(),
         dest('assets/built/', {sourcemaps: '.'}),
         livereload(),
         browserSync.stream()
@@ -93,8 +93,9 @@ function zipper(done) {
 
 
 const cssWatcher = () => watch('assets/scss/**', css);
+const jsWatcher = () => watch('assets/js/**', js);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs', '!node_modules/**/*.hbs'], hbs);
-const watcher = parallel(cssWatcher, hbsWatcher);
+const watcher = parallel(cssWatcher, hbsWatcher, jsWatcher);
 const build = series(css, js);
 const dev = series(build, serve, watcher);
 

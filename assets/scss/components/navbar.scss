@@ -1,0 +1,8 @@
+.navbar {
+    height: $navbar-height;
+    &-brand {
+        img {
+            height: 50px;
+        }
+    }
+}

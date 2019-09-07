@@ -1,0 +1,15 @@
+
+
+        {{#get "posts" filter="tag:intro"}}
+            {{#foreach posts}}
+            <div class="bg-light min-h-l d-flex align-items-center" style="background-image: url({{img_url feature_image}}); background-repeat: no-repeat; background-position: center center; background-size: cover">
+                <div class="container">
+                <div class="row text-center justify-content-center text-light" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                    <div class="col-sm-6 text-center">
+                            {{content}}
+                    </div>
+                </div>
+                </div>
+            </div>
+        {{/foreach}}
+        {{/get}}
