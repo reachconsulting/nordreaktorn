@@ -6,11 +6,11 @@
                 <div class="embed-responsive embed-responsive-4by3" style="background-image: url({{img_url feature_image}}); background-repeat: no-repeat; background-position: center center; background-size: cover">
                 </div>
             </div>
-            <div class="col-md-6 text-center d-flex align-items-center py-5" data-aos="fade-left">
+            <div class="col-md-6 text-center d-flex align-items-center py-5">
                 <div class=" flex-grow-1 ">
-                    <p class="mb-0">&lt;{{@site.description}}/&gt;</p>
-                    <h1 class="display-4">{{@site.title}}</h1>
-                    {{content}}
+                    <p class="mb-0" data-aos="fade-down" data-aos-delay="300">&lt;{{@site.description}}/&gt;</p>
+                    <h1 class="display-4" data-aos="fade-left" data-aos-delay="600">{{@site.title}}</h1>
+                    <div data-aos="fade-up" data-aos-delay="900">{{content}}</div>
                 </div>
             </div>
         </div>
