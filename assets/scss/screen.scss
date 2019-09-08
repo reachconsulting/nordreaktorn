@@ -30,10 +30,14 @@
 }
 
 .min-h-m {
-    min-height: 520px;
+    @include media-breakpoint-up(sm) {
+        min-height: 520px;
+    }
 }
 .min-h-l {
-    min-height: 720px;
+    @include media-breakpoint-up(sm) {
+        min-height: 720px;
+    }
 }
 
 a.anchor {

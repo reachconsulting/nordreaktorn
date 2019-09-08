@@ -1,7 +1,5 @@
 // ANIMATE ON SCROLL
-AOS.init({
-    anchorPlacement: 'top-center' 
-});
+AOS.init({disable: 'mobile'});
 
 // Smooooth Scroll
 var scroll = new SmoothScroll('a[href*="#"]');
