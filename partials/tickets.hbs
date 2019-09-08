@@ -1,8 +1,19 @@
-<div class="container" data-aos="fade-up" data-aos-anchor-placement="top-center">
-    <div class="my-5 text-center" id="tickets">
-        <h1 class="mb-4">Biljetter</h1>
-        <a href="#" class="btn btn-outline-primary">Köp din biljett</a>
-    </div>
+<div class="">
+    {{#get "posts" filter="tag:tickets"}}
+        {{#foreach posts}}
+            <div class="row no-gutters">
+                <div class="col-md-6" data-aos="fade-right" data-aos-anchor-placement="top-center">
+                    <div class="embed-responsive embed-responsive-4by3" style="background-image: url({{img_url feature_image}}); background-repeat: no-repeat; background-position: center center; background-size: cover">
+                    </div>
+                </div>
+                <div class="col-md-6 text-center d-flex align-items-center py-5">
+                    <div class=" flex-grow-1 ">
+                        <h1 data-aos="fade-left">Biljetter</h1>
+                        <div class="mb-5"  data-aos="fade-left">{{content}}</div>
+                        <a href="#" class="btn btn-outline-primary" data-aos="fade-left">Köp din biljett</a>
+                    </div>
+                </div>
+            </div>
+        {{/foreach}}
+    {{/get}}
 </div>
-
-<div class="buy-now-area"><a href="#" class="btn btn-primary">Köp din biljett</a></div>
