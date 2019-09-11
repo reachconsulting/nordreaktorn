@@ -1,0 +1,22 @@
+<footer class="site-foot text-center py-4">
+      <div class="container">
+        <div class="social-links">
+          {{#if @site.twitter}}
+          <a href="{{twitter_url @site.twitter}}" title="NördReaktorn @Twitter" target="_blank" rel="noopener"><span class="fab fa-twitter"></span></span></a>
+          {{/if}}
+          <a href="mailto:nordreaktorn@reachconsulting.se" title="nordreaktorn@reachconsulting.se"><span class="far fa-envelope"></span></span></a>
+          {{#if @site.facebook}}
+          <a href="{{facebook_url @site.facebook}}" title="B3 Reach Consulting @Facebook" target="_blank" rel="noopener"><span class="fab fa-facebook-f"></span></a>
+          {{/if}}
+          <a href="https://instagram.com/reachconsulting" title="B3 Reach Consulting @Instagram" target="_blank" rel="noopener"><span class="fab fa-instagram"></span></span></a>
+          <a href="https://linkedin.com/company/5136977" title="B3 Reach Consulting @LinkedIn" target="_blank" rel="noopener"><span class="fab fa-linkedin-in"></span></a>
+          <a href="https://goo.gl/maps/deyMRuhwWiJrWpEi9" title="Kulturhuset Spira i Jönköping @Google Maps" target="_blank" rel="noopener"><span class="fas fa-map"></span></a>
+        </div>
+        &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{#if @site.logo}}
+            <img src="{{@site.logo}}" alt="{{@site.title}}" style="max-height: 24px;"/>
+            {{else}}
+            {{@site.title}}
+            {{/if}}
+            </a> by <a href="https://reachconsulting.se" title="B3 Reach Consulting" target="_blank" rel="noopener"><img src="/content/images/2019/09/reach-logo-black.png" style="max-height: 24px;"/></a>
+      </div>
+</footer>

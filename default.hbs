@@ -13,6 +13,7 @@
     {{!-- Styles'n'Scripts --}}
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Condensed:700i&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <script src="https://kit.fontawesome.com/4b06201d41.js"></script>
 
     {{!-- This tag outputs SEO meta+structured data and other important settings --}}
     {{ghost_head}}
@@ -50,23 +51,9 @@
     </main>
 
     {{!-- The footer at the very bottom of the screen --}}
-    <footer class="site-foot text-center py-4">
-      <div class="container">
-        {{!-- <div class="social-links">
-          {{#if @site.facebook}}
-          <a href="{{facebook_url @site.facebook}}" title="Facebook" target="_blank" rel="noopener">Facebook</a>
-          {{/if}}
-          {{#if @site.twitter}}
-          <a href="{{twitter_url @site.twitter}}" title="Twitter" target="_blank" rel="noopener">Twitter</a>
-          {{/if}}
-          <a href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" title="RSS" target="_blank" rel="noopener">RSS</a>
-        </div> --}}
-        &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a>
-      </div>
-    </footer>
+    {{> "footer"}}
 
 </div>
-
 <script
     src="https://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
