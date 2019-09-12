@@ -1,38 +1,30 @@
 <div class="container">
-        <h1 class="text-center mb-5">Talare</h1>
-    <div class="row mt-4">
+        <h1 class="text-center mb-3">Talare</h1>
+    <div class="row">
             {{#get "posts" filter="tag:speaker" as |speakers|}}
             {{#foreach speakers}}
-            <!-- Card Flip -->
-            <div class="card-flip col-12 col-md-6 col-lg-3 mb-3" data-aos="fade-up" data-aos-delay="{{@index}}00" data-aos-anchor-placement="top-center">
-                <div class="flip">
-                    <div class="front">
-                        <!-- front content -->
-                        <div class="card h-100 bg-light">
-                            <div class="p-4">
-                                <img src="{{img_url feature_image size='m'}}" class="card-img rounded-circle"/>
-                            </div>
-                            <div class="card-body">
-                                <h4 class="card-title">{{{title}}}</h4>
-                                <p class="card-text" id="desc{{@index}}">{{{excerpt}}}</p>
+                {{#if featured}}
 
-                            </div>
+                            
+                <div class="col-12 text-center mb-5">
+                    <h4 class="card-title">{{{title}}}</h4>
+                    <p class="card-text" id="desc{{@index}}">{{{excerpt}}}</p>
+                </div>
+                {{else}}
+                <div class="col-12 col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="{{@index}}00" data-aos-anchor-placement="top-center">
+                    <div class="card h-100 bg-light">
+                        <div class="p-4">
+                            <img src="{{img_url feature_image size='m'}}" class="card-img rounded-circle"/>
                         </div>
-                    </div>
-                    <div class="back">
-                        <!-- back content -->
-                        <div class="card h-100 bg-dark text-light">
-                            <div class="card-body text-center d-flex align-items-center ">
-                                <div class="w-100">
-                                    <h5>Om mig</h5>
-                                    {{content}}
-                                </div>
-                            </div>
+                        <div class="card-body">
+                            <h4 class="card-title">{{{title}}}</h4>
+                            <p class="card-text" id="desc{{@index}}">{{{excerpt}}}</p>
+
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- End Card Flip -->
+
+                {{/if}}
             {{/foreach}}
             {{/get}}
     </div>

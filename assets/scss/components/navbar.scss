@@ -1,8 +1,23 @@
 .navbar {
-    padding: 15px 1rem;
+    padding: 15px 0;
     &-brand {
         img {
             height: 50px;
+        }
+    }
+    .nav-link {
+        @extend h4;
+        text-decoration: none;
+        &.active {
+            &::after {
+                border-bottom: $border-width solid black;
+                content: "";
+                left: 0;
+                margin-top: -$border-width;
+                position: absolute;
+                right: 0;
+                top: 50%;
+              }
         }
     }
 }
