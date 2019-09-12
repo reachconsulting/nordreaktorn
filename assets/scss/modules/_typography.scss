@@ -2,5 +2,8 @@
     .display-#{$i} { font-weight: bold; font-style: italic; }
 }
 @for $i from 1 through 6 {
-    .h#{$i}, h#{$i} { font-style: italic; }
+    .h#{$i}, h#{$i} { font-style: italic;
+        -webkit-mask-image: url('../images/grunge.png');
+      -webkit-mask-size: 944px 604px;
+      mix-blend-mode: multiply;}
 }
