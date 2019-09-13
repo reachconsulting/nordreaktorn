@@ -2,7 +2,7 @@
 <div class="container py-5">
         <h1 class="text-center mb-5">Amazing Partners & Sponsorer</h1>
             <div class="mb-5"  data-aos="fade-left">{{content}}</div>
-{{#get "posts" include="tags" filter="tag:partners+tag:gold" as |partners|}}
+{{#get "posts" include="tags" filter="tag:partner+tag:gold" as |partners|}}
             <h2>Guld</h2>
             <ul class="nav  justify-content-center">
         {{#foreach partners}}
@@ -12,7 +12,7 @@
         {{/foreach}}
     </ul>
 {{/get}}
-{{#get "posts" include="tags" filter="tag:partners+tag:silver" as |partners|}}
+{{#get "posts" include="tags" filter="tag:partner+tag:silver" as |partners|}}
             <h2>Silver</h2>
             <ul class="nav  justify-content-center">
         {{#foreach partners}}
@@ -22,7 +22,7 @@
         {{/foreach}}
     </ul>
 {{/get}}
-{{#get "posts" include="tags" filter="tag:partners+tag:bronze" as |partners|}}
+{{#get "posts" include="tags" filter="tag:partner+tag:bronze" as |partners|}}
             <h2>Brons</h2>
             <ul class="nav  justify-content-center">
         {{#foreach partners}}
