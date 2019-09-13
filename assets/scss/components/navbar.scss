@@ -1,8 +1,31 @@
 .navbar {
     padding: 15px 0;
+    @include media-breakpoint-down(sm) {
+        padding: 15px 1rem;
+    }
+    &-toggler {
+        padding: .25rem 0;
+        font-size: 1.25rem;
+        line-height: 1;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        color: black!important
+        &:active {
+            outline: none;
+            box-shadow: none;
+        }
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
     &-brand {
         img {
             height: 50px;
+            @include media-breakpoint-down(sm) {
+                height: 30px;
+            }
         }
     }
     .nav-link {
@@ -17,6 +40,9 @@
                 position: absolute;
                 right: 0;
                 top: 50%;
+                @include media-breakpoint-down(sm) {
+                    border: none;
+                }
               }
         }
     }
