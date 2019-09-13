@@ -1,9 +1,11 @@
 {{#get "posts" include="tags" filter="tag:partners" as |partnerinfo|}}
 <div class="container py-5">
-        <h1 class="text-center mb-5">Amazing Partners & Sponsorer</h1>
-            <div class="mb-5"  data-aos="fade-left">{{content}}</div>
+    {{#foreach partnerinfo}}
+        <h1 class="text-center mb-5">{{title}}</h1>
+        <div class="mb-5"  data-aos="fade-left">{{content}}</div>
+    {{/foreach}}
 {{#get "posts" include="tags" filter="tag:partner+tag:gold" as |partners|}}
-            <h2>Guld</h2>
+            <h2 class="text-center mb-5">Guld</h2>
             <ul class="nav  justify-content-center">
         {{#foreach partners}}
         <li class="nav-item d-flex align-items-center {{primary_tag.name}}" style="max-width: 192px;">
@@ -13,7 +15,7 @@
     </ul>
 {{/get}}
 {{#get "posts" include="tags" filter="tag:partner+tag:silver" as |partners|}}
-            <h2>Silver</h2>
+            <h2 class="text-center mb-5">Silver</h2>
             <ul class="nav  justify-content-center">
         {{#foreach partners}}
         <li class="nav-item d-flex align-items-center {{primary_tag.name}}" style="max-width: 192px;">
@@ -23,7 +25,7 @@
     </ul>
 {{/get}}
 {{#get "posts" include="tags" filter="tag:partner+tag:bronze" as |partners|}}
-            <h2>Brons</h2>
+            <h2 class="text-center mb-5">Brons</h2>
             <ul class="nav  justify-content-center">
         {{#foreach partners}}
         <li class="nav-item d-flex align-items-center {{primary_tag.name}}" style="max-width: 192px;">
@@ -32,7 +34,9 @@
         {{/foreach}}
     </ul>
 {{/get}}
+
 </div>
+
 {{else}}
 {{/get}}
 
