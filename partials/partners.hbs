@@ -1,6 +1,9 @@
-{{#get "posts" include="tags" filter="tag:partner" as |partners|}}
+{{#get "posts" include="tags" filter="tag:partners" as |partnerinfo|}}
 <div class="container py-5">
         <h1 class="text-center mb-5">Amazing Partners & Sponsorer</h1>
+            <div class="mb-5"  data-aos="fade-left">{{content}}</div>
+{{#get "posts" include="tags" filter="tag:partners+tag:gold" as |partners|}}
+            <h2>Guld</h2>
             <ul class="nav  justify-content-center">
         {{#foreach partners}}
         <li class="nav-item d-flex align-items-center {{primary_tag.name}}" style="max-width: 192px;">
@@ -8,6 +11,27 @@
         </li>
         {{/foreach}}
     </ul>
+{{/get}}
+{{#get "posts" include="tags" filter="tag:partners+tag:silver" as |partners|}}
+            <h2>Silver</h2>
+            <ul class="nav  justify-content-center">
+        {{#foreach partners}}
+        <li class="nav-item d-flex align-items-center {{primary_tag.name}}" style="max-width: 192px;">
+            <img src="{{img_url feature_image}}" alt="{{title}}" class="img-fluid nav-link" style="max-height: 96px;" />
+        </li>
+        {{/foreach}}
+    </ul>
+{{/get}}
+{{#get "posts" include="tags" filter="tag:partners+tag:bronze" as |partners|}}
+            <h2>Brons</h2>
+            <ul class="nav  justify-content-center">
+        {{#foreach partners}}
+        <li class="nav-item d-flex align-items-center {{primary_tag.name}}" style="max-width: 192px;">
+            <img src="{{img_url feature_image}}" alt="{{title}}" class="img-fluid nav-link" style="max-height: 96px;" />
+        </li>
+        {{/foreach}}
+    </ul>
+{{/get}}
 </div>
 {{else}}
 {{/get}}
