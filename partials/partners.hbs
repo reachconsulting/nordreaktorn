@@ -4,35 +4,38 @@
         <h1 class="text-center mb-5">{{title}}</h1>
         <div class="mb-5"  data-aos="fade-left">{{content}}</div>
     {{/foreach}}
-{{#get "posts" include="tags" filter="tag:partner+tag:gold" as |partners|}}
-            <h2 class="text-center mb-5">Guld</h2>
+{{#get "posts" include="tags" filter="tag:partner+tag:gold" as |gpartners|}}
+            <h2 class="text-center mb-5">Guldpartners</h2>
             <ul class="nav  justify-content-center">
-        {{#foreach partners}}
+        {{#foreach gpartners}}
         <li class="nav-item d-flex align-items-center {{primary_tag.name}}" style="max-width: 192px;">
             <img src="{{img_url feature_image}}" alt="{{title}}" class="img-fluid nav-link" style="max-height: 96px;" />
         </li>
         {{/foreach}}
     </ul>
+{{else}}
 {{/get}}
-{{#get "posts" include="tags" filter="tag:partner+tag:silver" as |partners|}}
-            <h2 class="text-center mb-5">Silver</h2>
+{{#get "posts" include="tags" filter="tag:partner+tag:silver" as |spartners|}}
+            <h2 class="text-center mb-5">Silverpartners</h2>
             <ul class="nav  justify-content-center">
-        {{#foreach partners}}
+        {{#foreach spartners}}
         <li class="nav-item d-flex align-items-center {{primary_tag.name}}" style="max-width: 192px;">
             <img src="{{img_url feature_image}}" alt="{{title}}" class="img-fluid nav-link" style="max-height: 96px;" />
         </li>
         {{/foreach}}
     </ul>
+{{else}}
 {{/get}}
-{{#get "posts" include="tags" filter="tag:partner+tag:bronze" as |partners|}}
-            <h2 class="text-center mb-5">Brons</h2>
+{{#get "posts" include="tags" filter="tag:partner+tag:bronze" as |bpartners|}}
+            <h2 class="text-center mb-5">Bronspartners</h2>
             <ul class="nav  justify-content-center">
-        {{#foreach partners}}
+        {{#foreach bpartners}}
         <li class="nav-item d-flex align-items-center {{primary_tag.name}}" style="max-width: 192px;">
             <img src="{{img_url feature_image}}" alt="{{title}}" class="img-fluid nav-link" style="max-height: 96px;" />
         </li>
         {{/foreach}}
     </ul>
+{{else}}
 {{/get}}
 
 </div>
