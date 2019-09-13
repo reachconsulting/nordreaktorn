@@ -1,5 +1,5 @@
-<footer class="site-foot text-center py-4">
-      <div class="container">
+<footer class="site-foot bg-light p-3 p-md-5">
+      <div class="container-fluid">
         <div class="social-links">
           {{#if @site.twitter}}
           <a href="{{twitter_url @site.twitter}}" title="NördReaktorn @Twitter" target="_blank" rel="noopener"><span class="fab fa-twitter"></span></span></a>
@@ -12,11 +12,12 @@
           <a href="https://linkedin.com/company/5136977" title="B3 Reach Consulting @LinkedIn" target="_blank" rel="noopener"><span class="fab fa-linkedin-in"></span></a>
           <a href="https://goo.gl/maps/deyMRuhwWiJrWpEi9" title="Kulturhuset Spira i Jönköping @Google Maps" target="_blank" rel="noopener"><span class="fas fa-map"></span></a>
         </div>
-        &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{#if @site.logo}}
-            <img src="{{@site.logo}}" alt="{{@site.title}}" style="max-height: 24px;"/>
+        <p><strong>{{@site.title}}</strong> - {{@site.description}}</p>
+        <p>&copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{#if @site.logo}}
+            <img src="{{@site.logo}}" alt="{{@site.title}}" height="24px"/>
             {{else}}
             {{@site.title}}
             {{/if}}
-            </a> by <a href="https://reachconsulting.se" title="B3 Reach Consulting" target="_blank" rel="noopener"><img src="/content/images/2019/09/reach-logo-black.png" style="max-height: 24px;"/></a>
+            </a> by <a href="https://reachconsulting.se" title="B3 Reach Consulting" target="_blank" rel="noopener"><img src="/content/images/2019/09/reach-logo-black.png" style="max-height: 24px;"/></a></p>
       </div>
 </footer>

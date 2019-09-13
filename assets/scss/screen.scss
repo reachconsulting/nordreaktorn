@@ -1,9 +1,13 @@
 @import "modules/vars";
+@import "modules/mixins";
+
 
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/aos/src/sass/aos";
 
 @import "modules/typography";
+@import "patterns/buttons";
+@import "patterns/global";
 @import "components/custom";
 @import "components/navbar";
 @import "layouts/default";
@@ -16,10 +20,6 @@
 
 
 /* Your styles here */
-
-.btn {
-    text-decoration: none;
-}
 
 .large-underline {
     transition: background-size .6s ease-out;

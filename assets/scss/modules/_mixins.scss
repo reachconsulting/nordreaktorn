@@ -1,0 +1,5 @@
+@mixin grunge {
+    mask-image: url('../images/grunge.png');
+    mask-size: 944px 604px;
+    mix-blend-mode: multiply;
+}
