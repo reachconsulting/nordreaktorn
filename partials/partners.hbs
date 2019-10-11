@@ -8,9 +8,7 @@
             <h2 class="text-center mb-5">Guldpartners</h2>
             <ul class="nav  justify-content-center">
         {{#foreach gpartners}}
-        <li class="nav-item d-flex align-items-center {{primary_tag.name}}" style="max-width: 192px;">
-            <img src="{{img_url feature_image}}" alt="{{title}}" class="img-fluid nav-link" style="max-height: 96px;" />
-        </li>
+        {{> "partner"}}
         {{/foreach}}
     </ul>
 {{else}}
@@ -19,9 +17,7 @@
             <h2 class="text-center mb-5">Silverpartners</h2>
             <ul class="nav  justify-content-center">
         {{#foreach spartners}}
-        <li class="nav-item d-flex align-items-center {{primary_tag.name}}" style="max-width: 192px;">
-            <img src="{{img_url feature_image}}" alt="{{title}}" class="img-fluid nav-link" style="max-height: 96px;" />
-        </li>
+        {{> "partner"}}
         {{/foreach}}
     </ul>
 {{else}}
@@ -30,9 +26,7 @@
             <h2 class="text-center mb-5">Bronspartners</h2>
             <ul class="nav  justify-content-center">
         {{#foreach bpartners}}
-        <li class="nav-item d-flex align-items-center {{primary_tag.name}}" style="max-width: 192px;">
-            <img src="{{img_url feature_image}}" alt="{{title}}" class="img-fluid nav-link" style="max-height: 96px;" />
-        </li>
+        {{> "partner"}}
         {{/foreach}}
     </ul>
 {{else}}

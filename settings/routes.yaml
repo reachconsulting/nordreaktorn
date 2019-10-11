@@ -1,0 +1,18 @@
+routes:
+  
+collections:
+  /:
+    permalink: /{slug}/
+    template: index
+    filter: tag:-speaker+tag:-partner
+
+  /speaker/:
+    permalink: /speaker/{slug}/
+    filter: tag:speaker+tag:-partner
+    
+  /partner/:
+    permalink: /partner/{slug}/
+    filter: tag:partner+tag:-speaker
+    
+taxonomies:
+  

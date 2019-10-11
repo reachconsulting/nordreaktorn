@@ -1,0 +1,47 @@
+{{!< default}}
+
+<div class="container">
+        <h1 class="text-center mb-3">Talare</h1>
+    <div class="row">
+            {{#get "posts" filter="tag:speaker" as |speakers|}}
+            {{#foreach speakers}}
+                {{#if featured}}
+
+                            
+                <div class="col-12 text-center mb-5">
+                    <h4 class="card-title"><a href="{{url}}">{{{title}}}</a></h4>
+                    <p class="card-text" id="desc{{@index}}">{{{excerpt}}}</p>
+                </div>
+                {{else}}
+                <div class="col-12 col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="{{@index}}00" data-aos-anchor-placement="top-center">
+                    <div class="card h-100 bg-light">
+                        <div class="p-4">
+                            <img src="{{img_url feature_image size='m'}}" class="card-img rounded-circle"/>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title"><a href="{{url}}">{{{title}}}</a></h4>
+                            <p class="card-text" id="desc{{@index}}">{{{excerpt}}}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {{/if}}
+            {{/foreach}}
+            {{/get}}
+    </div>
+</div>
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+<script>
+// Layout Script for Ghost Gallery Cards
+var images = document.querySelectorAll('.kg-gallery-image img');
+images.forEach(function (image) {
+    var container = image.closest('.kg-gallery-image');
+    var width = image.attributes.width.value;
+    var height = image.attributes.height.value;
+    var ratio = width / height;
+    container.style.flex = ratio + ' 1 0%';
+})
+</script>
+{{/contentFor}}
