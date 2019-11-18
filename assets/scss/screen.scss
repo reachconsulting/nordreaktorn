@@ -47,3 +47,11 @@ a.anchor {
     top: -$navbar-height;
     visibility: hidden;
 }
+
+.bg-black {
+    a {color: white;
+        &:hover {
+            color:white;
+        }
+    }
+}

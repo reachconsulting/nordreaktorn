@@ -4,7 +4,7 @@
         <h1 class="text-center mb-5">{{title}}</h1>
         <div class="mb-5"  data-aos="fade-left">{{content}}</div>
     {{/foreach}}
-{{#get "posts" include="tags" filter="tag:partner+tag:gold" as |gpartners|}}
+{{#get "posts" include="tags" filter="tag:gold" as |gpartners|}}
             <h2 class="text-center mb-5">Guldpartners</h2>
             <ul class="nav  justify-content-center">
         {{#foreach gpartners}}
@@ -13,20 +13,20 @@
     </ul>
 {{else}}
 {{/get}}
-{{#get "posts" include="tags" filter="tag:partner+tag:silver" as |spartners|}}
+{{#get "posts" include="tags" filter="tag:silver" as |spartners|}}
             <h2 class="text-center mb-5">Silverpartners</h2>
             <ul class="nav  justify-content-center">
         {{#foreach spartners}}
-        {{> "partner"}}
+        {{> partner}}
         {{/foreach}}
     </ul>
 {{else}}
 {{/get}}
-{{#get "posts" include="tags" filter="tag:partner+tag:bronze" as |bpartners|}}
+{{#get "posts" include="tags" filter="tag:bronze" as |bpartners|}}
             <h2 class="text-center mb-5">Bronspartners</h2>
             <ul class="nav  justify-content-center">
         {{#foreach bpartners}}
-        {{> "partner"}}
+        {{> partner}}
         {{/foreach}}
     </ul>
 {{else}}

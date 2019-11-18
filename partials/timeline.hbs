@@ -1,20 +1,15 @@
-<div class="timeline">
-    <div class="timeline-header">
-        <div class="timeline-header-content">Lorem</div>
+{{#get "posts" include="tags" filter="tag:slot" order="published_at asc" as |slots|}}
+<div class="timeline-header">
+        <div class="timeline-header-content">Schema</div>
     </div>
-    <div class="timeline-event timeline-event-right" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-        <div class="arrow"></div>
-        <div class="timeline-event-content">
-            <h3>Popover title</h3>
-            And here's some amazing content. It's very engaging. Right?
-        </div>
-    </div>
-    <div class="timeline-event">
-        <div class="arrow"></div>
-        <div class="timeline-event-content" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-            
-            <h3>Popover title</h3>
-            And here's some amazing content. It's very engaging. Right?
-        </div>
-    </div>
+    <div class="timeline">
+    {{#foreach slots}}
+    {{#has tag="right"}}
+    {{> slotright}}
+    {{else}}
+    {{> slot}}
+    {{/has}}
+    {{/foreach}}
 </div>
+{{else}}
+{{/get}}

@@ -4,15 +4,19 @@ collections:
   /:
     permalink: /{slug}/
     template: index
-    filter: tag:-speaker+tag:-partner
+    filter: tag:-speaker+tag:-partner+tag:-nerd
 
   /speaker/:
     permalink: /speaker/{slug}/
-    filter: tag:speaker+tag:-partner
+    filter: tag:speaker+tag:-partner+tag:-nerd
     
   /partner/:
     permalink: /partner/{slug}/
-    filter: tag:partner+tag:-speaker
+    filter: tag:partner+tag:-speaker+tag:-nerd
+
+  /nerd/:
+    permalink: /nerd/{slug}/
+    filter: tag:nerd+tag:-speaker+tag:-partner
     
 taxonomies:
   
