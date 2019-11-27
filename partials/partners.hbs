@@ -31,6 +31,15 @@
     </ul>
 {{else}}
 {{/get}}
+{{#get "posts" include="tags" filter="tag:coop" as |coops|}}
+            <h2 class="text-center mb-5">Samarbetar även med</h2>
+            <ul class="nav  justify-content-center">
+        {{#foreach coops}}
+        {{> partner}}
+        {{/foreach}}
+    </ul>
+{{else}}
+{{/get}}
 
 </div>
 
