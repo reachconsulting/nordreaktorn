@@ -1,7 +1,7 @@
 {
     "name": "nordreaktorn",
     "desription": "Härdsmältetema för konferensen NördReaktorn",
-    "version": "0.9.9",
+    "version": "0.9.10",
     "engines": {
         "ghost": ">=2.0.0",
         "ghost-api": "v2"

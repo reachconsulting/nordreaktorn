@@ -1,0 +1,28 @@
+.program {
+    position:relative;
+    border: black solid 3px;
+    border-color: black;
+    border-radius: 2px;
+    margin-bottom: 22px;
+    width: 50%;
+    margin-left:25%;
+    
+    &-header {
+        @include grunge;
+        background-color: black;
+        color:white;
+        text-align:center;
+    }
+
+    &-time {
+        text-align:center;
+        vertical-align: top;
+        width:25%;
+    }
+
+    td {
+        border: black solid 3px;
+        padding: 5px;
+    }
+    
+}
