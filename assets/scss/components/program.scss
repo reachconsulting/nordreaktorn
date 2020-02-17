@@ -4,8 +4,12 @@
     border-color: black;
     border-radius: 2px;
     margin-bottom: 22px;
-    width: 50%;
-    margin-left:25%;
+    width: 60%;
+    margin-left:20%;
+@include media-breakpoint-down(sm) {
+        width: calc(100%-30px);
+        margin-left:15px;
+    }
     
     &-header {
         @include grunge;
